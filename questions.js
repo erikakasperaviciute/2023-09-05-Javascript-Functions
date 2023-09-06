@@ -1,3 +1,13 @@
+function repeatGame() {
+  let startAgain = prompt("Jei nori žaisti dar kartą, spausk Y").toLowerCase();
+
+  if (startAgain === "y") {
+    firstLevel();
+  } else {
+    alert("Žaidimas baigtas");
+  }
+}
+
 function firstLevel() {
   let correctAnswer11 = "1";
   let correctAnswer12 = "1";
@@ -23,6 +33,7 @@ function firstLevel() {
     secondLevel();
   } else {
     alert("Nepatekai į kitą lygį.😞 Abu atsakymai neteisingi.");
+    repeatGame();
   }
 }
 
@@ -45,12 +56,15 @@ function secondLevel() {
     alert(
       "Nepatekai į kitą lygį.😞 Pirmas atsakymas buvo neteisngas, bet antras teisingas."
     );
+    repeatGame();
   } else if (correctAnswer21 === playerAnswer21) {
     alert(
       "Nepatekai į kitą lygį.😞 Pirmas atsakymas buvo teisngas, bet antras neteisingas."
     );
+    repeatGame();
   } else {
     alert("Nepatekai į kitą lygį.😞 Abu atsakymai neteisingi.");
+    repeatGame();
   }
 }
 
@@ -86,12 +100,16 @@ function thirdLevel() {
     alert("Patekai į kitą lygį.🥳 Pirmas atsakymas buvo neteisingas.");
   } else if (correctAnswer31 === playerAnswer31) {
     alert("Neptekai į kitą lygį.😞 Antras ir trečias atsakymai neteisngi.");
+    repeatGame();
   } else if (correctAnswer32 === playerAnswer32) {
     alert("Neptekai į kitą lygį.😞 Pirmas ir trečias atsakymai neteisngi.");
+    repeatGame();
   } else if (correctAnswer33 === playerAnswer33) {
     alert("Nepatekai į kitą lygį.😞 Pirmas ir antras atsakymai neteisngi.");
+    repeatGame();
   } else {
     alert("Nepatekai į kitą lygį.😞 Visi atsakymai neteisngi.");
+    repeatGame();
   }
 }
 
